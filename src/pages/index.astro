@@ -1,6 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro'; // El layout ya tiene el encabezado y pie de página.
+import Fondo from '../img/empty-room-with-chairs-desks.jpg';
 ---
 
 <Layout title='Solincan'>
+	<img src={Fondo.src} alt="fondo-principal">
 </Layout>
+
+<style>
+	img{
+		width: 100%;
+	}
+</style>

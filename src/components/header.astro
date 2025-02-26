@@ -1,28 +1,63 @@
 ---
-import Logo from '../img/logoFinal.png'; // El logo de la empresa.
+import Logo from '../img/logoFinal.png';
 ---
 
-<header>
+<body>
+  <header id="header">
     <section id="left">
-        <a href=""><img src={Logo.src} alt="logo"></a>
+      <a href=""><img src={Logo.src} alt="logo" /></a>
     </section>
     <section id="center">
-        <a href="/">Inicio</a>
-        <a href="/about">Sobre Solincan</a>
-        <a href="/services">Servicios</a>
-        <a href="/proyects">Proyectos</a>
+      <a href="/">Inicio</a>
+      <a href="/about">Sobre Solincan</a>
+      <a href="/services">Servicios</a>
+      <a href="/proyects">Proyectos</a>
     </section>
     <section id="right">
-        <a href="/contact"><button class="contacto">Contactar</button></a>
+      <a href="/contact"><button class="contacto">Contactar</button></a>
     </section>
-</header>
+  </header>
+
+  <!-- Para cambiar el fondo del encabezado al bajar en la página. -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var header = document.querySelector("#header");
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    });
+  </script>
+</body>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
     header{
+        width: 100%;
         font-family: "Rajdhani", serif;
         font-weight: 600;
         font-style: normal;
+        background: transparent;
+        transition: background .3s ease-in-out;
+        display: flex;
+        justify-content: center;
+        padding: 1% 0 1% 0;
+        position: fixed;
+    }
+
+    header.scrolled{
+        background: #948d18;
+    }
+
+    #left{
+        width: 50%;
+    }
+
+    #left a img{
+        width: 20%;
     }
 </style>
