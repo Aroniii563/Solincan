@@ -1,0 +1,58 @@
+---
+import Logo from "../img/logoFinal.png"; // El logo de la empresa.
+import LayoutError from "../layouts/LayoutError.astro";
+---
+
+<LayoutError title="404 not found">
+    <main>
+        <div id="error">
+            <h1>404</h1>
+            <p>NOT FOUND</p>
+        </div>
+        <div id="img">
+            <img src={Logo.src} alt="logotipo">
+        </div>
+    </main>
+</LayoutError>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+    main{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        background-color: #948d18;
+        font-family: "Rajdhani", serif;
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    #error{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background-color: #444645;
+        border-radius: 53% 47% 100% 0% / 100% 100% 0% 0%  ;
+    }
+
+    #error h1{
+        font-size: 30vh;
+        margin: 0;
+    }
+
+    #error p{
+        font-size: 20vh;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    #img img{
+        width: 100%;
+        position: relative;
+        top: 25%;
+    }
+</style>
