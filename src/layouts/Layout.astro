@@ -6,7 +6,8 @@ interface Props {
 const { title } = Astro.props;
 
 import Pestaña from "../img/encabezado.png";
-import Header from "../components/header.astro"; // El encabezado de la página web.
+import Header from "../components/header.astro"; // El encabezado de la web.
+import Footer from "../components/footer.astro"; // El pie de página de la web.
 ---
 
 <!doctype html>
@@ -21,6 +22,7 @@ import Header from "../components/header.astro"; // El encabezado de la página 
 	<body>
 		<Header /> <!-- El encabezado importado. -->
 		<slot /> <!-- Contenido de las páginas de la web. -->
+		<Footer /> <!-- El pie de página importado -->
 	</body>
 </html>
 
