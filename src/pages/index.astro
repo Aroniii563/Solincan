@@ -1,14 +1,226 @@
 ---
 import Layout from '../layouts/Layout.astro'; // El layout ya tiene el encabezado y pie de página.
+import Logo from '../img/logoFinal.png';
 import Fondo from '../img/empty-room-with-chairs-desks.jpg';
+import Movil from '../img/desarrollo-de-aplicaciones.png';
+import Seguridad from '../img/seguridad-informatica.png';
+import Telecomunicaciones from '../img/icono-de-telecomunicaciones.png';
+import Sistema from '../img/operando.png';
 ---
 
 <Layout title='Solincan'>
-	<img src={Fondo.src} alt="fondo-principal">
+	<main>
+		<div class="fondo-de-pagina imagen">
+			<img src={Fondo.src} alt="fondo-pagina">
+		</div>
+		<div id="pagina">
+			<section class="first-panel home">
+				<div id="text">
+					<h1>Consultoría Tecnológica</h1>
+					<p>Especializados en brindar soluciones</p>
+				</div>
+				<div id="contactar">
+					<a href="/contact">Contactar</a>
+				</div>
+			</section>
+			<section class="second-panel about">
+				<div class="text">
+					<div class="first-box box">
+						<img src={Movil.src} alt="icon">
+						<h2>Software a medida y aplicaciones móviles</h2>
+						<p>Desarrollamos <span>software a medida</span> y aplicaciones móviles adaptadas a los objetivos y procesos de su organización.</p>
+					</div>
+					<div class="second-box box">
+						<img src={Seguridad.src} alt="icon">
+						<h2>Peritajes de seguridad informática</h2>
+						<p>Ofrecemos servicios profesionales de <span>peritaje informático y seguridad digital</span> para empresas y particulares que requieran análisis técnicos rigurosos.</p>
+					</div>
+					<div class="third-box box">
+						<img src={Telecomunicaciones.src} alt="icon">
+						<h2>Instalación y proyectos de telecomunicaciones</h2>
+						<p>Brindamos soluciones integrales en <span>instalaciones y proyectos de telecomunicaciones</span>, atendiendo especialmente a las necesidades de <span>pymes y hoteles</span>.</p>
+					</div>
+					<div class="fourth-box box">
+						<img src={Sistema.src} alt="icon">
+						<h2>Sistemas para empresas</h2>
+						<p>En SOLINCAN proveemos servicios de <span>implementación y mantenimiento de sistemas informáticos empresariales</span>.</p>
+					</div>
+				</div>
+				<div id="button">
+					<a href="/services">Saber más</a>
+				</div>
+			</section>
+			<section class="third-panel services">
+				<div id="image">
+					<img src={Logo.src} alt="icon">
+				</div>
+				<div>
+					<h1>Acerca de Solincan</h1>
+					<p>SOLINCAN es una consultoría tecnológica especializada en brindar soluciones informáticas integrales, seguridad digital y servicios de telecomunicaciones. Contamos con un equipo de ingenieros altamente cualificados y con amplia experiencia en el sector tecnológico.</p>
+					<a href="/about">Conóceme más</a>
+				</div>
+			</section>
+		</div>
+	</main>
 </Layout>
 
 <style>
-	img{
+	@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+	main{
+		font-family: "Rajdhani", serif;
+        font-weight: 600;
+        font-style: normal;
+	}
+
+	.imagen img{
 		width: 100%;
+		height: 75vh;
+	}
+
+	#pagina{
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.home{
+		background: transparent;
+		backdrop-filter: brightness(50%);
+		width: 100%;
+		height: 70vh;
+	}
+
+	.home #text{
+		margin: 13% 0 0 30%;
+		color: #fff;
+	}
+
+	.home #text h1{
+		font-size: 75px;
+		margin-bottom: 0;
+		animation: appear 1s ease-in-out;
+	}
+
+	.home #text p{
+		font-size: 25px;
+		font-weight: 200;
+		margin-top: 0;
+		animation: appear 2.5s ease-in-out;
+	}
+
+	.home #contactar{
+		margin: 5% 0 0 30%;
+	}
+
+	.home #contactar a{
+		background: #948d18;
+		color: #fff;
+		text-decoration: none;
+		padding: 20px;
+		font-size: 20px;
+		border-radius: 10px;
+		transition: all 0.3s ease-out;
+	}
+
+	.home #contactar a:hover{
+		background: #fff;
+		color: #948d18;
+	}
+
+	@keyframes appear{
+		0%{
+			filter: contrast(0);
+		}
+		25%{
+			filter: contrast(25%);
+		}
+		50%{
+			filter: contrast(50%);
+		}
+		75%{
+			filter: contrast(75%);
+		}
+		100%{
+			filter: contrast(100%);
+		}
+	}
+
+	.about{
+		background: #444645;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	.about .text img{
+		width: 50%;
+	}
+
+	.about .text{
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		margin-top: 5%;
+	}
+
+	.about .text div{
+		background: #948d18;
+		border-radius: 67% 33% 35% 65% / 35% 80% 20% 65%;
+		color: #fff;
+		padding: 5%;
+		margin: 0 20px 0 20px;
+	}
+
+	.about .text div:nth-child(even){
+		background: #948d18;
+		border-radius: 63% 37% 70% 30% / 66% 59% 41% 34%;
+		color: #fff;
+		padding: 5%;
+		margin: 0 20px 0 20px;
+	}
+
+	.about .text div h1{
+		width: 150%;
+	}
+
+	.about .text div span{
+		color: #444645;
+	}
+
+	.about #button{
+		display: flex;
+		justify-content: center;
+		margin-bottom: 5%;
+	}
+
+	.about #button a{
+		background: #948d18;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 10px;
+		padding: 12.5px;
+		font-size: 20px;
+		margin-top: 5%;
+		transition: all 0.3s ease-out;
+	}
+
+	.about #button a:hover{
+		background: #fff;
+		color: #948d18;
+	}
+
+	.services{
+		background: #f5eeea;
+		display: flex;
+		justify-content: center;
+	}
+
+	.services #image img{
+		width: 50%;
 	}
 </style>
