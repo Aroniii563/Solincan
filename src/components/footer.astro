@@ -22,6 +22,9 @@ import Logo from '../img/logoFinal.png';
 </body>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+
     footer{
         display: flex;
         justify-content: center;
@@ -30,13 +33,17 @@ import Logo from '../img/logoFinal.png';
         z-index: 1;
         width: 100%;
         padding: 5% 0 5% 0;
+        font-family: "Rajdhani", serif;
+        font-weight: 600;
+        font-style: normal;
     }
 
     #logo{
         width: 25%;
         text-align: center;
         color: #fff;
-        margin-right: 50px;
+        margin-right: 80px;
+        margin-top: 50px;
     }
 
     #logo img{
@@ -49,5 +56,121 @@ import Logo from '../img/logoFinal.png';
         justify-content: center;
         flex-direction: column;
         border: none;
+    }
+
+    #suscribe form fieldset p{
+        color: #fff;
+        font-size: 50px;
+    }
+
+    #suscribe form fieldset label{
+        color: #fff;
+        font-size: 20px;
+    }
+
+    #suscribe form fieldset input{
+        width: 80%;
+        border-radius: 10px;
+        border: none;
+        height: 4vh;
+        padding: 10px;
+    }
+
+    #suscribe form fieldset button{
+        width: 35%;
+        font-size: 15px;
+        font-weight: bold;
+        background: #e26526;
+        color: #141414;
+        border: none;
+        border-radius: 15px;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    #suscribe form fieldset button:hover{
+        background: #232323;
+        color: #e26526;
+        box-shadow: 2.5px 2.5px 10px #141414;
+        cursor: pointer;
+    }
+
+    @media (width < 1100px){
+        #suscribe form fieldset p{
+            font-size: 35px;
+        }
+
+        #suscribe form fieldset label{
+            font-size: 15px;
+        }
+
+        #suscribe form fieldset button{
+            font-size: 10px;
+            padding: 15px;
+        }
+    }
+
+    @media (width < 900px){
+        #suscribe form fieldset p{
+            font-size: 30px;
+        }
+
+        #suscribe form fieldset label{
+            font-size: 12px;
+        }
+
+        #suscribe form fieldset input{
+            padding: 0 5px 0 8px;
+        }
+
+        #suscribe form fieldset button{
+            font-size: 10px;
+            padding: 15px;
+        }
+    }
+
+    @media (width < 450px){
+        footer{
+            flex-direction: column;
+            padding: 10% 0 20% 0;
+        }
+
+        #logo{
+            width: 100%;
+        }
+
+        #logo img{
+            width: 75%;
+        }
+
+        #suscribe form fieldset{
+            text-align: center;
+        }
+
+        #suscribe form fieldset input{
+            margin-left: 35px;
+        }
+
+        #suscribe form fieldset button{
+            margin-left: 32.5%;
+        }
+    }
+
+    @media (width < 750px) and (height < 400px){
+        #suscribe form fieldset input{
+            padding: 10px;
+        }
+    }
+
+    @media (width < 850px) and (height < 400px){
+        #suscribe form fieldset input{
+            padding: 10px;
+        }
+    }
+
+    @media (width < 900px) and (height < 420px){
+        #suscribe form fieldset input{
+            padding: 10px;
+        }
     }
 </style>
