@@ -54,7 +54,7 @@ import Sistema from '../img/operando.png';
 				<div id="image">
 					<img src={Logo.src} alt="icon">
 				</div>
-				<div>
+				<div class="info-box info"> 
 					<h1>Acerca de Solincan</h1>
 					<p>SOLINCAN es una consultoría tecnológica especializada en brindar soluciones informáticas integrales, seguridad digital y servicios de telecomunicaciones. Contamos con un equipo de ingenieros altamente cualificados y con amplia experiencia en el sector tecnológico.</p>
 					<a href="/about">Conóceme más</a>
@@ -71,11 +71,13 @@ import Sistema from '../img/operando.png';
 		font-family: "Rajdhani", serif;
         font-weight: 600;
         font-style: normal;
+		height: 247vh;
 	}
 
 	.imagen img{
 		width: 100%;
-		height: 75vh;
+		height: 80vh;
+		position: static;
 	}
 
 	#pagina{
@@ -92,11 +94,11 @@ import Sistema from '../img/operando.png';
 		background: transparent;
 		backdrop-filter: brightness(50%);
 		width: 100%;
-		height: 70vh;
+		height: 77vh;
 	}
 
 	.home #text{
-		margin: 13% 0 0 30%;
+		margin: 14% 0 0 30%;
 		color: #fff;
 	}
 
@@ -184,8 +186,8 @@ import Sistema from '../img/operando.png';
 		margin: 0 20px 0 20px;
 	}
 
-	.about .text div h1{
-		width: 150%;
+	.about .text div h2{
+		width: 100%;
 	}
 
 	.about .text div span{
@@ -215,12 +217,167 @@ import Sistema from '../img/operando.png';
 	}
 
 	.services{
-		background: #f5eeea;
+		/* background: #f5eeea; */
+		background: #444645;
 		display: flex;
 		justify-content: center;
+		position: relative;
+		padding: 10% 0 10% 0;
+	}
+
+	.services::before{
+		content: "";
+    	position: absolute;
+    	top: 0;
+    	left: 25%;
+    	width: 50%;
+    	height: 2px;
+		background-color: black;
+	}
+
+	.services #image{
+		margin-left: 10%;
+		margin-right: 0;
 	}
 
 	.services #image img{
+		width: 75%;
+		padding: 10%;
+		background: #fff;
+		border-radius: 10px; 
+	}
+	.services .info{
 		width: 50%;
+		color: #fff;
+		margin-right: 10%;
+		margin-left: 0;
+	}
+
+	.services .info h1{
+		background: #948d18;
+		border-radius: 15px;
+		width: 50%;
+		text-align: center;
+		padding: 15px;
+		font-size: 35px;
+	}
+
+	.services .info p{
+		width: 75%;
+		font-size: 25px;
+	}
+
+	.services .info a{
+		background: #948d18;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 10px;
+		padding: 12.5px;
+		font-size: 20px;
+		transition: all 0.3s ease-out;
+	}
+
+	.services .info a:hover{
+		background: #fff;
+		color: #948d18;
+	}
+
+	@media (width < 1300px){
+		main{
+			height: 252vh;
+		}
+
+		.home #text{
+			margin: 14% 0 0 20%;
+		}
+
+		.home #contactar{
+			margin: 5% 0 0 20%;
+		}
+
+		.services #image{
+			display: flex;
+			justify-content: center;
+			margin-top: 5%;
+		}
+
+		.services #image img{
+			width: 40%;
+			height: 30%;
+		}
+		
+		.services .info{
+			margin-right: 20%;
+			width: 75%;
+		}
+
+		.services .info h1{
+			font-size: 30px;
+			width: 75%;
+		}
+
+		.services .info p{
+			font-size: 20px;
+			width: 100%;
+			padding-bottom: 40px;
+		}
+	}
+
+	@media (width < 1100px){
+		.home #text h1{
+			font-size: 50px;
+		}
+
+		.home #text p{
+			font-size: 15px;
+		}
+
+		.home #contactar a{
+			font-size: 10px;
+			padding: 15px;
+		}
+
+		.about .text div h2{
+			font-size: 15px;
+		}
+
+		.about .text div p{
+			font-size: 10px;
+		}
+
+		.about #button a{
+			font-size: 10px;
+		}
+
+		.services #image{
+			display: flex;
+			justify-content: center;
+			margin-top: 5%;
+		}
+
+		.services #image img{
+			width: 40%;
+			height: 30%;
+		}
+		
+		.services .info{
+			margin-right: 20%;
+			width: 75%;
+		}
+
+		.services .info h1{
+			font-size: 20px;
+			width: 75%;
+		}
+
+		.services .info p{
+			font-size: 15px;
+			width: 100%;
+			padding-bottom: 40px;
+		}
+
+		.services .info a{
+			font-size: 10px;
+		}
 	}
 </style>
