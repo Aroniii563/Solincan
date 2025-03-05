@@ -1,0 +1,127 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Info from '../img/informatico.jpg';
+---
+
+<Layout title="Solincan | Sobre Solincan">
+    <main>
+        <section class="box first-box">
+            <div id="info">
+                <h1>¿Quiénes Somos?</h1>
+                <p>
+                    SOLINCAN es una consultoría tecnológica especializada en brindar soluciones informáticas integrales, seguridad digital y servicios de telecomunicaciones.
+                    Contamos con un equipo de ingenieros altamente cualificados y con amplia experiencia en el sector tecnológico. Nos caracteriza un enfoque profesional y 
+                    orientado al cliente: analizamos las necesidades de su empresa y desarrollamos soluciones a medida que impulsan la eficiencia y la innovación. Nuestro compromiso 
+                    con la calidad y la confidencialidad nos ha posicionado como un aliado de confianza para empresas que buscan optimizar sus recursos tecnológicos y proteger sus activos digitales.
+                </p>
+            </div>
+            <div id="whous">
+                <img src={Info.src} alt="image">
+            </div>
+        </section>
+        <section class="box second-box">
+            <div>
+                <h1>¿Por qué Elegirnos?</h1>
+                <p>
+                    Al seleccionar a SOLINCAN como su socio tecnológico, usted se beneficia de una combinación única de experiencia, calidad humana y compromiso. Estas son algunas de las razones por las que nuestras clientes confían en nosotros: <br>
+                   <ul class="list">
+                        <li><span>Experiencia Técnica Comprobada:</span> Más de una década de trayectoria implementando proyectos de software, seguridad y telecomunicaciones nos avala. Nuestro historial de éxitos en diversos sectores (turismo, financiero, industrial, entre otros) demuestra nuestra capacidad para afrontar retos tecnológicos con eficacia.</li>
+                        <li><span>Profesionales Certificados:</span> Contamos con ingenieros y técnicos certificados y colegiados, lo que garantiza un alto nivel de competencia y cumplimiento de estándares profesionales. Nuestra afiliación al C.O.I.T.I.C. y otras organizaciones del sector refleja nuestro compromiso con la formación continua y la ética profesional.</li>
+                        <li><span>Metodología de Trabajo Ágil y Eficiente:</span> Aplicamos metodologías de gestión de proyectos modernas que aseguran una comunicación transparente, entregas puntuales y adaptación constante a las necesidades cambiantes del cliente. Desde la planificación hasta la entrega final, mantenemos un enfoque orientado a la calidad y la mejora continua.</li>
+                        <li><span>Soporte Personalizado y Cercano:</span> Ofrecemos un trato directo y personalizado. Nos adaptamos a la forma de trabajar de su empresa y proporcionamos seguimiento post-proyecto, asegurando que cualquier consulta o incidencia sea atendida rápidamente por nuestro equipo. Creemos en construir relaciones a largo plazo basadas en la confianza y la satisfacción del cliente.</li>
+                   </ul>
+                </p>
+            </div>
+            <div class="button">
+                <a href="/services">Saber más</a>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+    main{
+        width: 100%;
+        height: 247vh;
+        margin: 0;
+        z-index: 1;
+        font-family: "Rajdhani", serif;
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    section{
+        background: #444645;
+
+    }
+
+    .first-box{
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .first-box #info{
+        justify-content: center;
+        color: #fff;
+        position: relative;
+        top: 250px;
+        left: 300px;
+    }
+
+    .first-box #info h1{
+        background: #948d18;
+        width: 30%;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 40px;
+        padding: 20px;
+    }
+
+    .first-box #info p{
+        width: 50%;
+        font-size: 20px;
+        border-right: 5px solid #948d18;
+        padding-right: 20px;
+    }
+
+    .first-box #whous{
+        width: 100%;
+        position: relative;
+        top: 250px;
+        right: 325px;
+        padding-left: 30px;
+    }
+
+    .first-box #whous img{
+        width: 100%;
+        padding: 20px;
+        animation: left 0.4s ease-in-out;
+        position: relative;
+    }
+
+    @keyframes left{
+        0%{
+            filter: opacity(0);
+            right: 20%;
+        }
+        25%{
+            filter: opacity(5px);
+            right: 15%;
+        }
+        50%{
+            filter: opacity(25px);
+            right: 10%;
+        }
+        75%{
+            filter: opacity(50px);
+            right: 5%;
+        }
+        100%{
+            filter: opacity(100px);
+            right: 0;
+        }
+    }
+</style>
