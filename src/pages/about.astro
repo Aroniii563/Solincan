@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Info from '../img/informatico.jpg';
+import Tecnica from '../img/E-tecnica.png';
+import Certificado from '../img/P-certificado.png';
 ---
 
 <Layout title="Solincan | Sobre Solincan">
@@ -24,13 +26,39 @@ import Info from '../img/informatico.jpg';
                 <h1>¿Por qué Elegirnos?</h1>
                 <p>
                     Al seleccionar a SOLINCAN como su socio tecnológico, usted se beneficia de una combinación única de experiencia, calidad humana y compromiso. Estas son algunas de las razones por las que nuestras clientes confían en nosotros: <br>
-                   <ul class="list">
-                        <li><span>Experiencia Técnica Comprobada:</span> Más de una década de trayectoria implementando proyectos de software, seguridad y telecomunicaciones nos avala. Nuestro historial de éxitos en diversos sectores (turismo, financiero, industrial, entre otros) demuestra nuestra capacidad para afrontar retos tecnológicos con eficacia.</li>
-                        <li><span>Profesionales Certificados:</span> Contamos con ingenieros y técnicos certificados y colegiados, lo que garantiza un alto nivel de competencia y cumplimiento de estándares profesionales. Nuestra afiliación al C.O.I.T.I.C. y otras organizaciones del sector refleja nuestro compromiso con la formación continua y la ética profesional.</li>
+                   <!-- <ul class="list">
                         <li><span>Metodología de Trabajo Ágil y Eficiente:</span> Aplicamos metodologías de gestión de proyectos modernas que aseguran una comunicación transparente, entregas puntuales y adaptación constante a las necesidades cambiantes del cliente. Desde la planificación hasta la entrega final, mantenemos un enfoque orientado a la calidad y la mejora continua.</li>
                         <li><span>Soporte Personalizado y Cercano:</span> Ofrecemos un trato directo y personalizado. Nos adaptamos a la forma de trabajar de su empresa y proporcionamos seguimiento post-proyecto, asegurando que cualquier consulta o incidencia sea atendida rápidamente por nuestro equipo. Creemos en construir relaciones a largo plazo basadas en la confianza y la satisfacción del cliente.</li>
-                   </ul>
+                   </ul> -->
                 </p>
+                <div class="square first-square">
+                    <img src={Tecnica.src} alt="E-tenica">
+                    <p><span>Experiencia Técnica Comprobada:</span> <br>Más de una década de trayectoria implementando proyectos de software, seguridad y telecomunicaciones nos avala. 
+                        Nuestro historial de éxitos en diversos sectores (turismo, financiero, industrial, entre otros) demuestra nuestra 
+                        capacidad para afrontar retos tecnológicos con eficacia.
+                    </p>
+                </div>
+                <div class="square">
+                    <img src={Certificado.src} alt="P-certificado">
+                    <p><span>Profesionales Certificados:</span> <br> Contamos con ingenieros y técnicos certificados y colegiados, lo que garantiza un alto nivel 
+                        de competencia y cumplimiento de estándares profesionales. Nuestra afiliación al C.O.I.T.I.C. y otras organizaciones del sector refleja 
+                        nuestro compromiso con la formación continua y la ética profesional.
+                    </p>
+                </div>
+                <div class="square">
+                    <img src={Certificado.src} alt="P-certificado">
+                    <p><span>Profesionales Certificados:</span> <br> Contamos con ingenieros y técnicos certificados y colegiados, lo que garantiza un alto nivel 
+                        de competencia y cumplimiento de estándares profesionales. Nuestra afiliación al C.O.I.T.I.C. y otras organizaciones del sector refleja 
+                        nuestro compromiso con la formación continua y la ética profesional.
+                    </p>
+                </div>
+                <div class="square">
+                    <img src={Certificado.src} alt="P-certificado">
+                    <p><span>Profesionales Certificados:</span> <br> Contamos con ingenieros y técnicos certificados y colegiados, lo que garantiza un alto nivel 
+                        de competencia y cumplimiento de estándares profesionales. Nuestra afiliación al C.O.I.T.I.C. y otras organizaciones del sector refleja 
+                        nuestro compromiso con la formación continua y la ética profesional.
+                    </p>
+                </div>
             </div>
             <div class="button">
                 <a href="/services">Saber más</a>
@@ -50,11 +78,7 @@ import Info from '../img/informatico.jpg';
         font-family: "Rajdhani", serif;
         font-weight: 600;
         font-style: normal;
-    }
-
-    section{
         background: #444645;
-
     }
 
     .first-box{
@@ -124,4 +148,6 @@ import Info from '../img/informatico.jpg';
             right: 0;
         }
     }
+
+
 </style>
