@@ -22,41 +22,42 @@ import Certificado from '../img/P-certificado.png';
             </div>
         </section>
         <section class="box second-box">
-            <div>
+            <div class="indication">
                 <h1>¿Por qué Elegirnos?</h1>
                 <p>
                     Al seleccionar a SOLINCAN como su socio tecnológico, usted se beneficia de una combinación única de experiencia, calidad humana y compromiso. Estas son algunas de las razones por las que nuestras clientes confían en nosotros: <br>
                    <!-- <ul class="list">
-                        <li><span>Metodología de Trabajo Ágil y Eficiente:</span> Aplicamos metodologías de gestión de proyectos modernas que aseguran una comunicación transparente, entregas puntuales y adaptación constante a las necesidades cambiantes del cliente. Desde la planificación hasta la entrega final, mantenemos un enfoque orientado a la calidad y la mejora continua.</li>
                         <li><span>Soporte Personalizado y Cercano:</span> Ofrecemos un trato directo y personalizado. Nos adaptamos a la forma de trabajar de su empresa y proporcionamos seguimiento post-proyecto, asegurando que cualquier consulta o incidencia sea atendida rápidamente por nuestro equipo. Creemos en construir relaciones a largo plazo basadas en la confianza y la satisfacción del cliente.</li>
                    </ul> -->
                 </p>
+            </div>
+            <div class="information">
                 <div class="square first-square">
                     <img src={Tecnica.src} alt="E-tenica">
-                    <p><span>Experiencia Técnica Comprobada:</span> <br>Más de una década de trayectoria implementando proyectos de software, seguridad y telecomunicaciones nos avala. 
+                    <p><span>Experiencia Técnica Comprobada:</span> <br><br>  Más de una década de trayectoria implementando proyectos de software, seguridad y telecomunicaciones nos avala. 
                         Nuestro historial de éxitos en diversos sectores (turismo, financiero, industrial, entre otros) demuestra nuestra 
                         capacidad para afrontar retos tecnológicos con eficacia.
                     </p>
                 </div>
-                <div class="square">
+                <div class="square second-square">
                     <img src={Certificado.src} alt="P-certificado">
-                    <p><span>Profesionales Certificados:</span> <br> Contamos con ingenieros y técnicos certificados y colegiados, lo que garantiza un alto nivel 
+                    <p><span>Profesionales Certificados:</span> <br><br> Contamos con ingenieros y técnicos certificados y colegiados, lo que garantiza un alto nivel 
                         de competencia y cumplimiento de estándares profesionales. Nuestra afiliación al C.O.I.T.I.C. y otras organizaciones del sector refleja 
                         nuestro compromiso con la formación continua y la ética profesional.
                     </p>
                 </div>
-                <div class="square">
+                <div class="square third-square">
                     <img src={Certificado.src} alt="P-certificado">
-                    <p><span>Profesionales Certificados:</span> <br> Contamos con ingenieros y técnicos certificados y colegiados, lo que garantiza un alto nivel 
-                        de competencia y cumplimiento de estándares profesionales. Nuestra afiliación al C.O.I.T.I.C. y otras organizaciones del sector refleja 
-                        nuestro compromiso con la formación continua y la ética profesional.
+                    <p><span>Metodología de Trabajo Ágil y Eficiente:</span> <br><br> Aplicamos metodologías de gestión de proyectos modernas que aseguran una comunicación 
+                        transparente, entregas puntuales y adaptación constante a las necesidades cambiantes del cliente. Desde la planificación hasta la entrega final, 
+                        mantenemos un enfoque orientado a la calidad y la mejora continua.
                     </p>
                 </div>
-                <div class="square">
+                <div class="square fourth-square">
                     <img src={Certificado.src} alt="P-certificado">
-                    <p><span>Profesionales Certificados:</span> <br> Contamos con ingenieros y técnicos certificados y colegiados, lo que garantiza un alto nivel 
-                        de competencia y cumplimiento de estándares profesionales. Nuestra afiliación al C.O.I.T.I.C. y otras organizaciones del sector refleja 
-                        nuestro compromiso con la formación continua y la ética profesional.
+                    <p><span>Soporte Personalizado y Cercano:</span> <br><br> Ofrecemos un trato directo y personalizado. Nos adaptamos a la forma de trabajar de su empresa y proporcionamos 
+                        seguimiento post-proyecto, asegurando que cualquier consulta o incidencia sea atendida rápidamente por nuestro equipo. Creemos en construir relaciones 
+                        a largo plazo basadas en la confianza y la satisfacción del cliente.
                     </p>
                 </div>
             </div>
@@ -72,7 +73,7 @@ import Certificado from '../img/P-certificado.png';
 
     main{
         width: 100%;
-        height: 247vh;
+        height: 220vh;
         margin: 0;
         z-index: 1;
         font-family: "Rajdhani", serif;
@@ -149,5 +150,282 @@ import Certificado from '../img/P-certificado.png';
         }
     }
 
+    .second-box{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
 
+    .second-box .information{
+        display: flex;
+        justify-content: center;
+    }
+
+    .second-box .information .square{
+        position: relative;
+        background-color: #948d18;
+        border-radius: 15px;
+        border: 2px solid black;
+        width: 20%;
+        height: 55vh;
+        margin: 0 10px 0 10px;
+    }
+
+    .second-box .information .square::before {
+        content: "";
+        position: absolute;
+        top: 5px; left: 5px;
+        right: 5px; bottom: 5px;
+        border: 5px double black;
+        border-radius: 15px;
+    }
+
+    .second-box .information .square img{
+        width: 50%;
+    }
+
+    .second-box .information .square p{
+        width: 75%;
+        margin-left: 12%;
+        color: #fff;
+    }
+
+    .second-box .information .square p span{
+        color: #444645;
+        font-weight: bolder;
+        font-size: 25px;
+    }
+
+    .second-box .indication h1{
+        background: #948d18;
+        color: #fff;
+        width: 25%;
+        font-size: 40px;
+        padding: 15px;
+        border-radius: 15px;
+        margin-left: 37%;
+        margin-bottom: 5%;
+    }
+
+    .second-box .indication p{
+        color: #fff;
+        font-size: 20px;
+        width: 55%;
+        margin-left: 22%;
+        margin-bottom: 2%;
+    }
+
+    .second-box .button{
+        margin-top: 5%;
+    }
+
+    .second-box .button a{
+        background: #948d18;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 10px;
+		padding: 12.5px;
+		font-size: 20px;
+		transition: all 0.3s ease-out;
+    }
+
+    .second-box .button a:hover{
+        background: #fff;
+		color: #948d18;
+    }
+
+    @media (width < 1500px){
+        .first-box #whous{
+            top: 350px;
+            right: 200px;
+        }
+
+        .second-box .information .square{
+            width: 22%;
+            height: 52vh;
+        }
+
+        .second-box .information .square p{
+            font-size: 15px;
+        }
+
+        .second-box .information .square p span{
+            font-size: 20px;
+        }
+    }
+
+    @media (width < 1300px){
+        .first-box{
+            height: 95vh;
+        }
+
+        .first-box #info h1{
+            font-size: 30px;
+            padding: 20px;
+        }
+
+        .first-box #info p{
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .first-box #info{
+            left: 220px;
+        }
+
+        .first-box #whous{
+            top: 275px;
+        }
+
+        .second-box .indication h1{
+            width: 25%;
+            font-size: 30px;
+            padding: 20px;
+            margin-left: 36%;
+        }
+
+        .second-box .information .square p{
+            font-size: 12px;
+        }
+
+        .second-box .information .square p span{
+            font-size: 17px;
+        }
+    }
+
+    @media (width < 1050px) and (height < 650px){
+        .first-box #info p{
+            width: 75%;
+        }
+
+        .first-box #info{
+            left: 50px;
+            top: 150px;
+            width: 50%;
+        }
+
+        .first-box{
+            height: 95vh;
+        }
+
+        .first-box #info h1{
+            width: 75%;
+            font-size: 25px;
+            padding: 20px;
+        }
+
+        .first-box #info p{
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .first-box #whous{
+            top: 175px;
+            right: 10px;
+            width: 25%;
+        }
+
+        .first-box #whous img{
+            width: 100%;
+        }
+
+        .second-box .indication h1{
+            font-size: 25px;
+        }
+
+        .second-box .indication p{
+            font-size: 15px;
+        }
+
+        .second-box .information .square p{
+            font-size: 10px;
+        }
+
+        .second-box .information .square{
+            width: 22%;
+            height: 54vh;
+        }
+
+        .second-box .button a{
+            font-size: 15px;
+        }
+    }
+
+    @media (width < 1100px){
+        main{
+            height: 265vh;
+        }
+
+        .first-box{
+            height: 100vh;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+
+        .first-box #info{
+            left: 25%;
+            width: 50%;
+            top: 100px;
+        }
+
+        .first-box #whous img{
+            width: 40%;
+        }
+
+        .first-box #info h1{
+            width: 100%;
+            font-size: 40px;
+            padding: 20px;
+        }
+
+        .first-box #info p{
+            width: 100%;
+            font-size: 25px;
+            font-weight: 500;
+            padding-bottom: 5%;
+            border-right: none;
+            border-bottom: 5px solid #948d18;
+        }
+
+        .first-box #whous{
+            top: 100px;
+            left: 1%;
+            width: 95%;
+        }
+
+        .second-box .information{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .second-box .information .square{
+            width: 75%;
+            height: 50vh;
+            margin: 0 10px 5% 12%;
+        }
+
+        .second-box .information .square p span{
+            font-size: 30px;
+        }
+
+        .second-box .information .square p{
+            font-size: 20px;
+        }
+
+        .second-box .indication{
+            margin-top: 20%;
+        }
+
+        .second-box .indication h1{
+            font-size: 40px;
+            width: 50%;
+            margin-left: 23.5%;
+        }
+
+        .second-box .indication p{
+            font-size: 30px;
+        }
+    }
 </style>
