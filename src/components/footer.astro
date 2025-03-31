@@ -1,176 +1,200 @@
 ---
-import Logo from '../img/logoFinal.png';
+import Logo from "../img/logoFinal.png";
 ---
 
 <body>
-    <footer>
-        <section id="logo">
-            <img src={Logo.src} alt="logo">
-            <p>&copy; 2025 SOLINCAN</p>
-        </section>
-        <section id="suscribe">
-            <form action="" method="post">
-                <fieldset>
-                    <p>Suscribirse a newsletter</p>
-                    <label for="mail">Correo electrónico</label>
-                    <input type="email" id="correo" required>
-                    <button type="submit">Suscribirse</button>
-                </fieldset>
-            </form>
-        </section>
-    </footer>
+  <footer id="footer">
+    <div class="footer-container">
+      <!-- Navegación -->
+      <div class="footer-nav">
+        <h3>Explora</h3>
+        <div class="footer-links">
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/services">Servicios</a></li>
+            <li><a href="/about">Sobre Solincan</a></li>
+            <li><a href="/proyects">Casos De Éxito</a></li>
+          </ul>
+          <ul>
+            <li><a href="/privacidad">Políticas De Privacidad</a></li>
+            <li><a href="/terminos">Términos De Uso</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Suscripción -->
+      <div class="footer-newsletter">
+        <h3>Suscríbete a nuestro boletín</h3>
+        <form onSubmit="event.preventDefault()">
+          <input type="email" placeholder="Correo electrónico" required />
+          <button type="submit">EMPEZAR</button>
+        </form>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="footer-copy">
+      © 2025 Solincan. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+     document.addEventListener("DOMContentLoaded", () => {
+        const currentPath = window.location.pathname.replace(/^\/|\/$/g, "").toLowerCase();
+        const links = document.querySelectorAll(".footer-links a");
+
+        links.forEach(link => {
+        const href = link.getAttribute("href").replace(/^\/|\/$/g, "").toLowerCase();
+        if (currentPath === href || (currentPath === "" && href === "index")) {
+            link.classList.add("active");
+        }
+        });
+    });
+  </script>
 </body>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+  #footer {
+    background-color: #02511a;
+    color: white;
+    padding: 60px 20px 30px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
 
+  .footer-links a.active {
+    color: #f15a24;
+    font-weight: bold;
+  }
 
-    footer{
-        display: flex;
-        justify-content: center;
-        background: #948d18;
-        position: absolute;
-        z-index: 1;
-        width: 100%;
-        padding: 5% 0 5% 0;
-        font-family: "Rajdhani", serif;
-        font-weight: 600;
-        font-style: normal;
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .footer-nav {
+    flex: 1 1 300px;
+  }
+
+  .footer-nav h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 20px;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover {
+    color: #f15a24;
+  }
+
+  .footer-social a {
+    color: white;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+  }
+
+  .footer-social a:hover {
+    color: #f15a24;
+  }
+
+  .footer-newsletter {
+    flex: 1 1 300px;
+  }
+
+  .footer-newsletter h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .footer-newsletter form {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .footer-newsletter input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+  }
+
+  .footer-newsletter button {
+    background-color: #004d40;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+  }
+
+  .footer-newsletter button:hover {
+    background-color: #00332d;
+  }
+
+  hr {
+    margin: 40px 0 20px;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .footer-copy {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ddd;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: flex-start;
     }
 
-    #logo{
-        width: 25%;
-        text-align: center;
-        color: #fff;
-        margin-right: 80px;
-        margin-top: 50px;
+    .footer-links {
+      flex-direction: column;
+      gap: 20px;
     }
 
-    #logo img{
-        width: 100%;
-        margin-bottom: 5%;
+    .footer-newsletter form {
+      flex-direction: column;
     }
 
-    #suscribe form fieldset{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        border: none;
+    .footer-newsletter button {
+      width: 100%;
     }
-
-    #suscribe form fieldset p{
-        color: #fff;
-        font-size: 50px;
-    }
-
-    #suscribe form fieldset label{
-        color: #fff;
-        font-size: 20px;
-    }
-
-    #suscribe form fieldset input{
-        width: 80%;
-        border-radius: 10px;
-        border: none;
-        height: 4vh;
-        padding: 10px;
-    }
-
-    #suscribe form fieldset button{
-        width: 35%;
-        font-size: 15px;
-        font-weight: bold;
-        background: #e26526;
-        color: #141414;
-        border: none;
-        border-radius: 15px;
-        margin-top: 20px;
-        padding: 20px;
-    }
-
-    #suscribe form fieldset button:hover{
-        background: #232323;
-        color: #e26526;
-        box-shadow: 2.5px 2.5px 10px #141414;
-        cursor: pointer;
-    }
-
-    @media (width < 1100px){
-        #suscribe form fieldset p{
-            font-size: 35px;
-        }
-
-        #suscribe form fieldset label{
-            font-size: 15px;
-        }
-
-        #suscribe form fieldset button{
-            font-size: 10px;
-            padding: 15px;
-        }
-    }
-
-    @media (width < 900px){
-        #suscribe form fieldset p{
-            font-size: 30px;
-        }
-
-        #suscribe form fieldset label{
-            font-size: 12px;
-        }
-
-        #suscribe form fieldset input{
-            padding: 0 5px 0 8px;
-        }
-
-        #suscribe form fieldset button{
-            font-size: 10px;
-            padding: 15px;
-        }
-    }
-
-    @media (width < 450px){
-        footer{
-            flex-direction: column;
-            padding: 10% 0 20% 0;
-        }
-
-        #logo{
-            width: 100%;
-        }
-
-        #logo img{
-            width: 75%;
-        }
-
-        #suscribe form fieldset{
-            text-align: center;
-        }
-
-        #suscribe form fieldset input{
-            margin-left: 35px;
-        }
-
-        #suscribe form fieldset button{
-            margin-left: 32.5%;
-        }
-    }
-
-    @media (width < 750px) and (height < 400px){
-        #suscribe form fieldset input{
-            padding: 10px;
-        }
-    }
-
-    @media (width < 850px) and (height < 400px){
-        #suscribe form fieldset input{
-            padding: 10px;
-        }
-    }
-
-    @media (width < 900px) and (height < 420px){
-        #suscribe form fieldset input{
-            padding: 10px;
-        }
-    }
+  }
 </style>

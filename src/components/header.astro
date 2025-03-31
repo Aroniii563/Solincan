@@ -1,20 +1,26 @@
 ---
-import Logo from '../img/logoFinal.png';
+import Logo from "../img/logoFinal.png";
 ---
 
 <body>
   <header id="header">
     <section id="left">
-      <a href=""><img src={Logo.src} alt="logo" /></a>
+      <a href="/"><img src={Logo.src} alt="logo" /></a>
     </section>
+    <button id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
     <section id="center">
       <a href="/">Inicio</a>
-      <a href="/about">Sobre Solincan</a>
       <a href="/services">Servicios</a>
-      <a href="/proyects">Proyectos</a>
+      <a href="/about">Sobre Solincan</a>
+      <a href="/proyects">Casos de éxito</a>
     </section>
     <section id="right">
-        <a href="/contact">Contactar</a>
+      <a href="mailto:info@solincan.com" id="email">info@solincan.com</a>
+      <a href="/contact" id="button">Contactar</a>
     </section>
   </header>
 
@@ -41,117 +47,191 @@ import Logo from '../img/logoFinal.png';
         }
       });
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll("#center a");
+      const path = window.location.pathname.replace(/^\/|\/$/g, ""); // elimina "/" al inicio y final
+
+      links.forEach((link) => {
+        const href = link.getAttribute("href").replace(/^\/|\/$/g, ""); // igual, sin slashes
+        if (path === href || (path === "" && href === "index")) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("center");
+
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("show");
+        toggle.classList.toggle("open");
+
+        const isOpen = toggle.classList.contains("open");
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    });
   </script>
 </body>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+  /* Header base (ya incluido antes) */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
 
-    header{
-        width: 100%;
-        font-family: "Rajdhani", serif;
-        font-weight: 600;
-        font-style: normal;
-        background: transparent;
-        transition: background 0.3s ease-in-out;
-        display: flex;
-        justify-content: center;
-        padding: 1% 0 1% 0;
-        position: fixed;
-        z-index: 2;
+  header.scrolled {
+    box-shadow: 2px 1px 7px #d94d1a;
+  }
+
+  header.width {
+    padding: 10px 60px;
+  }
+
+  /* Logo */
+  #left img {
+    height: 50px;
+  }
+
+  /* Menú central */
+  #center {
+    display: flex;
+    gap: 30px;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+
+  #center a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    transition:
+      color 0.3s ease,
+      border-bottom 0.3s ease;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+  }
+
+  #center a:hover {
+    color: #f15a24;
+    border-bottom: 2px solid #f15a24;
+  }
+
+  #center a.active {
+    color: #f15a24;
+    border-bottom: 2px solid #f15a24;
+  }
+
+  /* Contacto a la derecha */
+  #right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #email {
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #email:hover{
+    color: #d94d1a;
+  }
+
+  #button {
+    background-color: #f15a24;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  #button:hover {
+    background-color: #d94d1a;
+  }
+
+  /* Estilos base del botón */
+  #menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  @media (width < 1024px) {
+    #right {
+      display: none;
+    }
+  }
+
+  @media (width < 768px) {
+    #center {
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
     }
 
-    header.scrolled{
-        background: #948d18;
-        box-shadow: 2px 2px 10px black;
+    /* Menú abierto */
+    #center.show {
+      max-height: 500px; /* o más si tienes muchos links */
+      opacity: 1;
+      pointer-events: auto;
     }
 
-    header.width{
-        padding: 2.5px 0 2.5px 0;
-        transition: all 0.5s ease-out;
+    #menu-toggle {
+    display: flex;
     }
 
-    #center{
-        margin: 25px 50px 25px 50px;
+    /* Estado abierto: animamos con clases */
+    #menu-toggle.open .bar:nth-child(1) {
+      transform: rotate(45deg) translateY(8px);
     }
 
-    #center a{
-        color: #fff;
-        text-decoration: none;
-        margin: 10px 15px 0 15px;
-        font-size: 25px;
-        transition: all 0.3s ease-in;
+    #menu-toggle.open .bar:nth-child(2) {
+      opacity: 0;
     }
 
-    #center a:hover{
-        color: black;
-        text-decoration-line: overline;
+    #menu-toggle.open .bar:nth-child(3) {
+      transform: rotate(-45deg) translateY(-8px);
     }
 
-    #right{
-        width: 15%;
+    #right {
+      display: none;
     }
-
-    #right a{
-        position: relative;
-        top: 30px;
-        font-size: 20px;
-        margin: 15px 50px 10px 25px;
-        padding: 25px 50px 25px 50px;
-        border: none;
-        border-radius: 25px;
-        background: #e26526;
-        text-decoration: none;
-        color: #141414;
-        text-transform: uppercase;
-        width: 85px;
-    }
-
-    #right a:hover{
-        background: #232323;
-        color: #e26526;
-        box-shadow: 2.5px 2.5px 10px #141414;
-    }
-
-    #left{
-        width: 25%;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    #left a{
-        width: 50%;
-    }
-
-    #left a img{
-        width: 100%;
-        margin: 10px 0 0 0;
-    }
-
-    @media (width < 1300px){
-        #center{
-            margin: 25px 100px 25px 25px;
-        }
-
-        #center a{
-            font-size: 20px;
-        }
-    }
-
-    @media (width < 1100px){
-        #center{
-            margin: 25px 100px 25px 25px;
-        }
-
-        #center a{
-            font-size: 15px;
-        }
-
-        #right a{
-            padding: 15px 25px 15px 25px;
-            font-size: 10px;
-            top: 25px;
-        }
-    }
+  }
 </style>
