@@ -1,426 +1,479 @@
 ---
 import Layout from "../layouts/Layout.astro"; // El layout ya tiene el encabezado y pie de página.
-import Logo from '../img/logoFinal.png';
+import Logo from "../img/logoFinal.png";
+import Computer from "../img/datos.jpg";
+import Tell from "../img/ingeniero.jpg";
+import Recep from "../img/recepcion.jpg";
+import Help from "../img/help.jpg";
+import Ventana from "../img/windows.png";
 ---
 
 <Layout title="Solincan">
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-content">
-        <div class="text">
-          <h1>Ingeniería, automatización y desarrollo sofware</h1>
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>Ingeniería, automatización y desarrollo software</h1>
           <p>
             Ofrecemos tecnología innovadora para optimizar procesos en sectores
             clave
           </p>
-          <a href="#contacto" class="btn">Consúltanos</a>
+          <a href="/contacto" class="btn">Consúltanos</a>
         </div>
-        <div class="image-card">
-          <img src="/path-to-your-image.jpg" alt="Gráficas tecnológicas" />
-          <div class="card-description">
-            <strong>Solincan ⮞</strong>
-            <br />
-            A la vanguardia en soluciones digitales: trazabilidad, automatización,
-            sistemas expertos.
+        <div class="hero-image">
+          <img src={Computer.src} alt="Imagen tecnología" />
+          <div class="card-overlay">
+            <strong>Solincan Ingeniería 🚀</strong>
+            <p>
+              A lo largo de nuestra trayectoria, hemos colaborado con diversas
+              organizaciones, aportando soluciones.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Servicios -->
+    <!-- Sección Servicios -->
     <section class="servicios">
       <h2>Ofrecemos servicios satisfactorios y adaptados</h2>
-      <div class="servicios-grid">
-        <div class="servicio">
-          <img src="/icono-software.svg" alt="Software a medida" />
+      <div class="servicios-container">
+        <article class="servicio">
+          <img src={Ventana.src} alt="Software a medida" />
           <h3>Software a medida</h3>
           <p>
-            Cambiar la de tus rutas. Vestibulum et nulla vel nulla lacinia
-            consectetur.
+            Desarrollamos <strong>software a medida</strong> y aplicaciones móviles
+            adaptadas a los objetivos y procesos de su organización.
           </p>
-        </div>
-        <div class="servicio">
-          <img src="/icono-peritaje.svg" alt="Peritajes" />
+        </article>
+
+        <article class="servicio">
+          <img src="/peritajes-seguridad.png" alt="Peritajes de seguridad" />
           <h3>Peritajes de seguridad</h3>
           <p>
-            Cambiar la de tus rutas. Vestibulum et nulla vel nulla lacinia
-            consectetur.
+            Servicios de <strong
+              >peritaje informático y seguridad digital</strong
+            > para empresas y particulares con análisis técnicos rigurosos.
           </p>
-        </div>
-        <div class="servicio">
-          <img src="/icono-empresa.svg" alt="Sistemas empresa" />
+        </article>
+
+        <article class="servicio">
+          <img src="/sistemas-empresas.png" alt="Sistemas para empresas" />
           <h3>Sistemas para empresas</h3>
           <p>
-            Cambiar la de tus rutas. Vestibulum et nulla vel nulla lacinia
-            consectetur.
+            Asesoramos y gestionamos la <strong>migración a la nube</strong> de sus
+            servicios, mejorando flexibilidad y costes.
           </p>
-        </div>
+        </article>
       </div>
-      <div class="center">
-        <a href="/services" class="btn-secondary">Nuestros Servicios</a>
+      <div class="servicios-footer">
+        <p>¿Buscas algo más?</p>
+        <a href="/services" class="btn">Más Servicios</a>
       </div>
     </section>
 
-    <!-- Presentación / Primer paso -->
-    <section class="presentacion">
-      <div class="contenido">
-        <img src="/img-tecnico.jpg" alt="Técnico escribiendo código" />
-        <div class="info">
+    <!-- Sección Resultados -->
+    <section class="resultados">
+      <div class="resultados-container">
+        <div class="resultado-imagen">
+          <img src={Tell.src} alt="Resultados informáticos" />
+        </div>
+
+        <div class="resultado-contenido">
           <h2>El primer paso para obtener mejores resultados informáticos.</h2>
           <p>
-            Contamos con un equipo de ingenieros altamente calificados y con
+            Contamos con un equipo de ingenieros altamente cualificados y con
             amplia experiencia en el sector tecnológico.
           </p>
-          <a href="#contacto" class="btn">Consúltanos</a>
-          <p class="mini">
-            Solincan ⮞<br />Cada proyecto es una oportunidad para innovar y
-            acelerar el crecimiento de nuestra clientela.
-          </p>
-          <a href="#" class="mini-link">Saber más</a>
+          <a href="/contacto" class="btn">Consúltanos</a>
+
+          <div class="resultado-footer">
+            <p><strong>Solincan Ingeniería 🚀</strong></p>
+            <p>
+              <em
+                >Cada proyecto es una oportunidad para innovar y exceder las
+                expectativas de nuestros clientes.</em
+              >
+            </p>
+            <a href="/about">📑 Saber Más</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Casos de éxito -->
+    <!-- Sección Casos de Éxito -->
     <section class="casos-exito">
       <h2>Puede ser un Caso de Éxito</h2>
-      <p>La confianza de nuestros clientes es nuestro mejor aval.</p>
+      <p class="subtitulo">
+        La confianza de nuestros clientes es nuestro mejor aval.
+      </p>
+
       <div class="casos-grid">
         <div class="caso">
-          <p>
+          <h3>
             Implementamos una solución completa de telecomunicaciones y Wi-Fi
             inteligente en varios establecimientos hoteleros.
-          </p>
-          <span>Cadena hotelera internacional</span>
+          </h3>
+          <p class="cliente">Cadena hotelera regional</p>
         </div>
+
         <div class="caso">
-          <p>
+          <img src={Recep.src} alt="Caso hotel" />
+        </div>
+
+        <div class="caso">
+          <img src={Help.src} alt="Caso empresa" />
+        </div>
+
+        <div class="caso">
+          <h3>
             La solución se integró con éxito con los sistemas existentes y
-            recibió elogios por parte de la dirección debido a su impacto
-            tangible en los resultados del negocio.
-          </p>
-          <span>Proyecto industrial destacado</span>
+            recibió elogios por parte de la dirección por su impacto tangible en
+            los resultados del negocio.
+          </h3>
+          <p class="cliente">PYME del sector industrial</p>
         </div>
       </div>
-      <div class="center">
-        <a href="/proyects" class="btn-secondary">Ver más casos</a>
+
+      <div class="servicios-footer">
+        <a href="/proyects" class="btn">Ver más casos</a>
       </div>
     </section>
 
-    <!-- CTA final -->
-    <section class="cta-final" id="contacto">
+    <!-- Sección Final -->
+    <section class="cta-final">
       <h2>Impulsemos su próximo proyecto</h2>
       <a href="/contact" class="btn-outline">Consúltanos</a>
-      <div class="contact-info">
-        <span>info@solincan.com</span>
-        <span>Teléfono: +34 922 000 000</span>
+
+      <div class="contacto-info">
+        <p>soporte@solincan.com</p>
+        <p>Teléfono: +34 922 000 000</p>
       </div>
     </section>
   </main>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var div = document.querySelector(".first-box");
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 80) {
-          div.classList.add("appear");
-        } else {
-          div.classList.remove("appear");
-        }
-      });
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-      var div = document.querySelector(".second-box");
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 80) {
-          div.classList.add("appear");
-        } else {
-          div.classList.remove("appear");
-        }
-      });
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-      var div = document.querySelector(".third-box");
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 80) {
-          div.classList.add("appear");
-        } else {
-          div.classList.remove("appear");
-        }
-      });
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-      var div = document.querySelector(".fourth-box");
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 80) {
-          div.classList.add("appear");
-        } else {
-          div.classList.remove("appear");
-        }
-      });
-    });
-  </script>
 </Layout>
 
 <style>
-  /* Utilidades generales */
-  main {
-    font-family: "Helvetica Neue", sans-serif;
-    line-height: 1.6;
-    color: #000;
+  /* ==== ESTILOS GLOBALES ==== */
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #111;
+    margin: 0;
+    padding: 0;
   }
 
   h1,
   h2,
   h3 {
-    font-weight: 700;
+    margin: 0 0 15px;
   }
 
-  section {
-    padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  p {
+    margin: 0 0 15px;
   }
 
-  .center {
-    text-align: center;
-    margin-top: 30px;
-  }
-
-  /* Botones */
-  .btn,
-  .btn-secondary,
-  .btn-outline {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 6px;
+  a {
     text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s ease;
   }
 
+  /* ==== BOTONES ==== */
   .btn {
-    background-color: #f15a24;
+    background-color: #ff5500;
     color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
 
   .btn:hover {
-    background-color: #d94d1a;
-  }
-
-  .btn-secondary {
-    background-color: transparent;
-    border: 2px solid #f15a24;
-    color: #f15a24;
-  }
-
-  .btn-secondary:hover {
-    background-color: #f15a24;
-    color: white;
+    background-color: #e04800;
   }
 
   .btn-outline {
     background-color: white;
-    border: 2px solid black;
-    color: black;
+    color: #000;
+    border: 2px solid #000;
+    padding: 12px 24px;
     font-size: 1rem;
-  }
-
-  .btn-outline:hover {
-    background-color: #000;
-    color: white;
-  }
-
-  /* Hero */
-  .hero {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 40px;
-  }
-
-  .hero .text {
-    flex: 1;
-    min-width: 300px;
-  }
-
-  .hero .text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-
-  .hero .text p {
-    margin-bottom: 20px;
-  }
-
-  .hero .image-card {
-    flex: 1;
-    position: relative;
-    min-width: 300px;
-  }
-
-  .image-card img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 6px;
-  }
-
-  .image-card .card-description {
-    position: absolute;
-    bottom: -20px;
-    left: 20px;
-    background: white;
-    padding: 16px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    font-size: 0.9rem;
-  }
-
-  /* Servicios */
-  .servicios h2 {
-    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
     margin-bottom: 40px;
   }
 
-  .servicios-grid {
+  /* ==== HERO ==== */
+  .hero {
+    padding: 60px 20px;
+    margin-top: 75px;
+  }
+
+  .hero-container {
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    gap: 20px;
     flex-wrap: wrap;
+  }
+
+  .hero-content {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-image {
+    position: relative;
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-overlay {
+    position: absolute;
+    bottom: -10px;
+    left: -20px;
+    background-color: #ffffff;
+    padding: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    width: 280px;
+    text-align: left;
+  }
+
+  /* ==== SERVICIOS ==== */
+  .servicios {
+    padding: 80px 20px;
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .servicios h2 {
+    font-size: 2.4rem;
+    margin-bottom: 50px;
+  }
+
+  .servicios-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 
   .servicio {
-    max-width: 250px;
-    text-align: center;
+    flex: 1;
+    min-width: 260px;
+    max-width: 320px;
+    padding: 20px;
   }
 
   .servicio img {
-    width: 50px;
-    margin-bottom: 15px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 20px;
   }
 
-  /* Presentación */
-  .presentacion .contenido {
+  .servicio h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .servicio p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .servicios-footer {
+    margin-top: 40px;
+  }
+
+  /* ==== RESULTADOS ==== */
+  .resultados {
+    background-color: #f7f7f9;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: 60px auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  }
+
+  .resultados-container {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     gap: 40px;
+    flex-wrap: wrap;
   }
 
-  .presentacion img {
+  .resultado-imagen {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .resultado-imagen img {
     width: 100%;
-    max-width: 400px;
     border-radius: 20px;
+    object-fit: cover;
   }
 
-  .presentacion .info {
+  .resultado-contenido {
     flex: 1;
     min-width: 300px;
   }
 
-  .presentacion .info h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-
-  .presentacion .info .mini {
-    font-size: 0.85rem;
+  .resultado-footer {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
     margin-top: 20px;
   }
 
-  .mini-link {
+  .resultado-footer a {
+    color: #ff5500;
+    font-weight: bold;
     display: inline-block;
     margin-top: 10px;
-    font-size: 0.85rem;
-    color: #f15a24;
-    text-decoration: none;
   }
 
-  .mini-link:hover {
-    text-decoration: underline;
-  }
-
-  /* Casos de éxito */
-  .casos-exito h2 {
+  /* ==== CASOS DE ÉXITO ==== */
+  .casos-exito {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
     text-align: center;
+  }
+
+  .casos-exito h2 {
+    font-size: 2.3rem;
     margin-bottom: 10px;
   }
 
-  .casos-exito p {
-    text-align: center;
-    margin-bottom: 40px;
+  .subtitulo {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 50px;
   }
 
   .casos-grid {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    align-items: center;
   }
 
-  .caso {
-    max-width: 350px;
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 6px;
-    font-size: 0.95rem;
-  }
-
-  .caso span {
-    display: block;
-    margin-top: 15px;
+  .caso h3 {
+    font-size: 1.2rem;
     font-weight: 500;
-    font-size: 0.85rem;
+  }
+
+  .caso .cliente {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 10px;
     color: #555;
   }
 
-  /* CTA final */
+  .caso img {
+    width: 80%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  /* ==== CTA FINAL ==== */
   .cta-final {
-    background-color: #f15a24;
+    background-color: #fa5a0c;
     color: white;
     text-align: center;
-    padding: 100px 20px;
+    padding: 80px 20px;
   }
 
   .cta-final h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
+    font-weight: 600;
     margin-bottom: 30px;
   }
 
-  .cta-final .btn-outline {
-    margin-bottom: 30px;
-  }
-
-  .contact-info {
+  .contacto-info {
     display: flex;
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.1rem;
   }
 
-  /* Responsive */
-  @media (width < 768px) {
-    .hero,
-    .presentacion .contenido,
-    .servicios-grid,
-    .casos-grid {
+  .contacto-info p {
+    margin-top: 40px;
+  }
+
+  /* ==== RESPONSIVE ==== */
+  @media (max-width < 768px) {
+    .hero-container,
+    .resultados-container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .servicios-container {
       flex-direction: column;
       align-items: center;
     }
 
-    .image-card .card-description {
-      position: static;
-      margin-top: 10px;
+    .casos-grid {
+      grid-template-columns: 1fr;
     }
 
     .cta-final h2 {
+      font-size: 2rem;
+    }
+
+    .contacto-info {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn,
+    .btn-outline {
+      width: 80%;
+      max-width: 300px;
+    }
+  }
+
+  @media (max-width < 480px) {
+    .hero-content h1,
+    .resultados h2,
+    .servicios h2,
+    .casos-exito h2 {
       font-size: 1.8rem;
+    }
+
+    .btn,
+    .btn-outline {
+      font-size: 0.95rem;
+      padding: 10px 20px;
     }
   }
 </style>
