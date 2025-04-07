@@ -5,12 +5,14 @@ import Tell from "../img/ingeniero.jpg";
 import Recep from "../img/recepcion.jpg";
 import Help from "../img/help.jpg";
 import Ventana from "../img/windows.png";
+import Escudo from '../img/escudo.png';
+import Sistemas from '../img/sistemas.png';
 ---
 
 <Layout title="Solincan">
   <main>
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero scroll-animate fade-right">
       <div class="hero-container">
         <div class="hero-content">
           <h1>Ingeniería, automatización y desarrollo software</h1>
@@ -34,10 +36,11 @@ import Ventana from "../img/windows.png";
     </section>
 
     <!-- Sección Servicios -->
-    <section class="servicios">
+    <section class="servicios scroll-animate fade-up">
       <h2>Ofrecemos servicios satisfactorios y adaptados</h2>
+
       <div class="servicios-container">
-        <article class="servicio">
+        <article class="servicio scroll-animate fade-up">
           <img src={Ventana.src} alt="Software a medida" />
           <h3>Software a medida</h3>
           <p>
@@ -46,18 +49,19 @@ import Ventana from "../img/windows.png";
           </p>
         </article>
 
-        <article class="servicio">
-          <img src="/peritajes-seguridad.png" alt="Peritajes de seguridad" />
+        <article class="servicio scroll-animate fade-up">
+          <img src={Escudo.src} alt="Peritajes de seguridad" />
           <h3>Peritajes de seguridad</h3>
           <p>
             Servicios de <strong
               >peritaje informático y seguridad digital</strong
-            > para empresas y particulares con análisis técnicos rigurosos.
+            >
+            para empresas y particulares con análisis técnicos rigurosos.
           </p>
         </article>
 
-        <article class="servicio">
-          <img src="/sistemas-empresas.png" alt="Sistemas para empresas" />
+        <article class="servicio scroll-animate fade-up">
+          <img src={Sistemas.src} alt="Sistemas para empresas" />
           <h3>Sistemas para empresas</h3>
           <p>
             Asesoramos y gestionamos la <strong>migración a la nube</strong> de sus
@@ -65,6 +69,7 @@ import Ventana from "../img/windows.png";
           </p>
         </article>
       </div>
+
       <div class="servicios-footer">
         <p>¿Buscas algo más?</p>
         <a href="/services" class="btn">Más Servicios</a>
@@ -72,7 +77,7 @@ import Ventana from "../img/windows.png";
     </section>
 
     <!-- Sección Resultados -->
-    <section class="resultados">
+    <section class="resultados scroll-animate fade-up">
       <div class="resultados-container">
         <div class="resultado-imagen">
           <img src={Tell.src} alt="Resultados informáticos" />
@@ -101,7 +106,7 @@ import Ventana from "../img/windows.png";
     </section>
 
     <!-- Sección Casos de Éxito -->
-    <section class="casos-exito">
+    <section class="casos-exito scroll-animate fade-left">
       <h2>Puede ser un Caso de Éxito</h2>
       <p class="subtitulo">
         La confianza de nuestros clientes es nuestro mejor aval.
@@ -150,6 +155,26 @@ import Ventana from "../img/windows.png";
       </div>
     </section>
   </main>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target); // Solo animar una vez
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    document.querySelectorAll(".scroll-animate").forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
 </Layout>
 
 <style>
@@ -202,6 +227,11 @@ import Ventana from "../img/windows.png";
     border-radius: 10px;
     cursor: pointer;
     margin-bottom: 40px;
+  }
+
+  .btn-outline:hover{
+    background-color: black;
+    color: #fff;
   }
 
   /* ==== HERO ==== */
@@ -276,23 +306,33 @@ import Ventana from "../img/windows.png";
 
   .servicios-container {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 20px;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .servicio {
-    flex: 1;
-    min-width: 260px;
-    max-width: 320px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     padding: 20px;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .servicio:hover {
+    transform: translateY(-5px);
   }
 
   .servicio img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .servicio h3 {
@@ -426,6 +466,36 @@ import Ventana from "../img/windows.png";
 
   .contacto-info p {
     margin-top: 40px;
+  }
+
+  /* ESTADO INICIAL (oculto) */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+  }
+
+  /* Cuando el elemento entra en pantalla */
+  .scroll-animate.in-view {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* VARIANTES */
+  .fade-up {
+    transform: translateY(40px);
+  }
+
+  .fade-down {
+    transform: translateY(-40px);
+  }
+
+  .fade-left {
+    transform: translateX(-40px);
+  }
+
+  .fade-right {
+    transform: translateX(40px);
   }
 
   /* ==== RESPONSIVE ==== */
