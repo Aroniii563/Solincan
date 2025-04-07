@@ -111,6 +111,26 @@ import Computing from "../img/computing.jpg";
       <a href="/soluciones" class="btn-solid">Soluciones</a>
     </div>
   </main>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    document.querySelectorAll(".scroll-animate").forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
 </Layout>
 
 <style>
@@ -270,6 +290,37 @@ import Computing from "../img/computing.jpg";
   .btn-outline:hover {
     background-color: #f4511e;
     color: white;
+  }
+
+  /* Estado inicial (oculto) */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+    will-change: opacity, transform;
+  }
+
+  /* Cuando entra en pantalla */
+  .scroll-animate.in-view {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Variantes */
+  .fade-up {
+    transform: translateY(40px);
+  }
+
+  .fade-down {
+    transform: translateY(-40px);
+  }
+
+  .fade-left {
+    transform: translateX(-40px);
+  }
+
+  .fade-right {
+    transform: translateX(40px);
   }
 
   /* Responsive */
