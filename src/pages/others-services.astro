@@ -1,0 +1,623 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Desarrollo from "../img/desarrollo.jpg";
+import Paper from "../img/paper_2.jpg";
+import Fiskaly from "../img/fiskaly-logo.webp";
+---
+
+<Layout title="Más servicios | Solincan">
+  <main>
+    <section class="opciones-hero scroll-reveal">
+      <h1 class="opciones-titulo">Más opciones, mejores resultados</h1>
+    </section>
+
+    <section class="software-section scroll-reveal">
+      <div class="software-container">
+        <div class="software-image scroll-reveal">
+          <img src={Desarrollo.src} alt="Ilustración desarrollo software" />
+        </div>
+        <div class="software-content scroll-reveal">
+          <h1 class="software-title">Desarrollo de Software</h1>
+          <p class="software-description">
+            Analizamos las necesidades de su empresa y desarrollamos sistemas de
+            información modulares y escalables, adaptados al crecimiento del
+            negocio. También creamos software enfocado en mejorar la eficiencia
+            y sostenibilidad organizacional.
+          </p>
+          <h3>Implantamos soluciones de:</h3>
+          <ul class="software-list">
+            <li>
+              <span class="bullet"></span>Sistema de facturación electrónica,
+              veri*factu.
+            </li>
+            <li>
+              <span class="bullet"></span>Automatización de altas de
+              trabajadores en la TGSS.
+            </li>
+            <li>
+              <span class="bullet"></span>Sistema de gestión de colas y citas.
+            </li>
+            <li>
+              <span class="bullet"></span>Automatización de procesos y
+              aplicación de modelos basados en IA generativa.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="modelos-section scroll-reveal">
+      <div class="modelos-grid">
+        <div class="modelo-card scroll-reveal">
+          <div class="icono">🎓</div>
+          <h2 class="titulo">Transfer Learning</h2>
+          <p class="descripcion">
+            Parte de un modelo ya entrenado, adaptando únicamente las últimas
+            capas para tareas específicas.
+          </p>
+          <a
+            href="https://openwebinars.net/blog/transfer-learning/"
+            class="boton"
+            target="_blank">Leer Más</a
+          >
+        </div>
+
+        <div class="modelo-card scroll-reveal">
+          <div class="icono">📈</div>
+          <h2 class="titulo">Entrenamiento incremental</h2>
+          <p class="descripcion">
+            Actualizar constantemente un modelo en producción utilizando los
+            datos nuevos o privados disponibles.
+          </p>
+          <a
+            href="https://www.toolify.ai/es/ai-news-es/aprendizaje-incremental-en-ia-ventajas-y-desafos-1110445"
+            class="boton"
+            target="_blank">Leer Más</a
+          >
+        </div>
+
+        <div class="modelo-card scroll-reveal">
+          <div class="icono fondo-suave">🎚️</div>
+          <h2 class="titulo">Fine-tuning</h2>
+          <p class="descripcion">
+            Consiste en ajustar un modelo preentrenado usando conjuntos de datos
+            específicos o privados.
+          </p>
+          <a
+            href="https://www.ibm.com/es-es/think/topics/fine-tuning"
+            class="boton"
+            target="_blank">Leer Más</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="tgss-section scroll-reveal">
+      <div class="tgss-container">
+        <div class="tgss-texto scroll-reveal">
+          <h1 class="tgss-titulo">Sistema RED de la TGSS</h1>
+          <p class="tgss-descripcion">
+            Abstracción del alta de los trabajadores, en un sitio web, portal
+            corporativo, extranet, etc. a través de un formulario electrónico
+            sencillo:
+          </p>
+          <ul class="tgss-lista">
+            <li><span class="punto"></span>Alta de trabajadores</li>
+            <li><span class="punto"></span>Consultas de tramitaciones</li>
+          </ul>
+        </div>
+        <div class="tgss-imagen scroll-reveal">
+          <img src={Paper.src} alt="Documentos TGSS" />
+        </div>
+      </div>
+    </section>
+
+    <section class="verifactu-section" class="software-section scroll-reveal">
+      <div class="verifactu-container" class="modelo-card scroll-reveal">
+        <div class="verifactu-img" class="modelo-card scroll-reveal">
+          <img src={Fiskaly.src} alt="Logo fiskaly" />
+        </div>
+
+        <div class="verifactu-content scroll-reveal">
+          <h1 class="titulo">Verifactu</h1>
+          <p class="descripcion">
+            La nueva normativa Verifactu está transformando el ecosistema de
+            facturación en España, exigiendo a las empresas soluciones
+            certificadas que garanticen la integridad, trazabilidad y
+            verificación de sus facturas.
+          </p>
+          <p class="descripcion">
+            Ofrecemos una solución de API que facilita la integración con
+            sistemas de facturación, asegurando el cumplimiento normativo sin
+            complicaciones.
+          </p>
+
+          <ul class="verifactu-lista">
+            <li>
+              <span class="punto"></span>Integración sencilla mediante API
+            </li>
+            <li><span class="punto"></span>Cumplimiento total con Verifactu</li>
+            <li>
+              <span class="punto"></span>Seguridad y trazabilidad garantizadas
+            </li>
+          </ul>
+
+          <a href="/services" class="boton">Otros Servicios</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const elements = document.querySelectorAll(".scroll-reveal");
+
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+
+        elements.forEach((el) => {
+          const elementTop = el.getBoundingClientRect().top;
+
+          if (elementTop < windowHeight - 100) {
+            el.classList.add("show");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll(); // ejecutar una vez al cargar
+    });
+  </script>
+</Layout>
+
+<style>
+  .opciones-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    text-align: center;
+    background-color: #fff;
+    padding: 40px 20px;
+    font-family: "Arial", sans-serif;
+  }
+
+  .opciones-titulo {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: #111;
+  }
+
+  .software-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+  }
+
+  .software-container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .software-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    width: 400px;
+  }
+
+  .software-content {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .software-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #111;
+  }
+
+  .software-description {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  .software-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .software-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.4;
+  }
+
+  .bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #ff6600;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 6px;
+  }
+
+  .tgss-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+  }
+
+  .tgss-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+
+  .tgss-texto {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .tgss-titulo {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #111;
+  }
+
+  .tgss-descripcion {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .tgss-lista {
+    list-style: none;
+    padding: 0;
+  }
+
+  .tgss-lista li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 1rem;
+  }
+
+  .punto {
+    width: 10px;
+    height: 10px;
+    background-color: #ff6600;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .tgss-imagen img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    width: 350px;
+  }
+
+  .modelos-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+  }
+
+  .modelos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .modelo-card {
+    flex: 1 1 280px;
+    max-width: 300px;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .icono {
+    font-size: 48px;
+    color: #ff6600;
+    margin-bottom: 20px;
+  }
+
+  .fondo-suave {
+    background-color: #fff1ea;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 15px;
+  }
+
+  .titulo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #111;
+  }
+
+  .descripcion {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 25px;
+    line-height: 1.5;
+  }
+
+  .boton {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #ff6600;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+
+  .boton:hover {
+    background-color: #e95c00;
+  }
+
+  .verifactu-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+  }
+
+  .verifactu-container {
+    display: flex;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .verifactu-img img {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .verifactu-content {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .titulo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #111;
+  }
+
+  .descripcion {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+
+  .verifactu-lista {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  .verifactu-lista li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  .punto {
+    width: 10px;
+    height: 10px;
+    background-color: #ff6600;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .boton {
+    padding: 12px 24px;
+    background-color: #ff6600;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+  }
+
+  .boton:hover {
+    background-color: #e95c00;
+  }
+
+  /* Animación base oculta */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+  }
+
+  /* Cuando entra en vista */
+  .scroll-reveal.show {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (width < 768px) {
+    .opciones-titulo {
+      font-size: 2rem;
+    }
+  }
+
+  @media (width < 480px) {
+    .opciones-titulo {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (width < 991px) {
+    .contact-container {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .contact-form {
+      padding: 25px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 15px;
+    }
+
+    .software-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .software-content {
+      text-align: left;
+      padding: 0 10px;
+    }
+
+    .software-title {
+      font-size: 2.2rem;
+    }
+
+    .software-description {
+      font-size: 0.95rem;
+    }
+
+    .tgss-container {
+      flex-direction: column-reverse;
+      text-align: center;
+      gap: 40px;
+    }
+
+    .tgss-titulo {
+      font-size: 2.2rem;
+    }
+
+    .tgss-imagen img {
+      width: 280px;
+    }
+
+    .modelos-grid {
+      gap: 30px;
+    }
+
+    .verifactu-container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .verifactu-content {
+      text-align: left;
+    }
+  }
+
+  @media (width < 576px) {
+    .contact-section {
+      padding: 30px 15px;
+    }
+
+    .contact-info {
+      font-size: 15px;
+    }
+
+    .contact-form {
+      padding: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 14px;
+    }
+
+    .contact-form button {
+      font-size: 15px;
+      padding: 10px;
+    }
+
+    .software-title {
+      font-size: 1.8rem;
+    }
+
+    .software-description,
+    .software-list li {
+      font-size: 0.9rem;
+    }
+
+    .software-image img {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .tgss-titulo {
+      font-size: 1.8rem;
+    }
+
+    .tgss-descripcion,
+    .tgss-lista li {
+      font-size: 0.95rem;
+    }
+
+    .tgss-imagen img {
+      width: 220px;
+    }
+
+    .modelo-card {
+      max-width: 100%;
+    }
+
+    .titulo {
+      font-size: 1.2rem;
+    }
+
+    .descripcion {
+      font-size: 0.95rem;
+    }
+
+    .titulo {
+      font-size: 2rem;
+    }
+
+    .descripcion,
+    .verifactu-lista li {
+      font-size: 0.95rem;
+    }
+
+    .verifactu-img img {
+      width: 200px;
+    }
+  }
+</style>
