@@ -13,7 +13,7 @@ import Logo from "../img/logoFinal.png";
             <li><a href="/">Inicio</a></li>
             <li><a href="/services">Servicios</a></li>
             <li><a href="/about">Sobre Solincan</a></li>
-            <li><a href="/soluciones">Soluciones</a></li>
+            <li><a class="highlight" href="/solutions">Soluciones</a></li>
             <li><a href="/proyects">Casos De Éxito</a></li>
           </ul>
           <ul>
@@ -21,7 +21,6 @@ import Logo from "../img/logoFinal.png";
             <li><a href="/terminos">Términos De Uso</a></li>
           </ul>
         </div>
-
         <div class="footer-social">
           <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
@@ -32,11 +31,20 @@ import Logo from "../img/logoFinal.png";
       <!-- Suscripción -->
       <div class="footer-newsletter">
         <h3>Suscríbete a nuestro boletín</h3>
-        <form onSubmit="event.preventDefault()">
+        <form onsubmit="event.preventDefault()">
           <input type="email" placeholder="Correo electrónico" required />
           <button type="submit">EMPEZAR</button>
         </form>
       </div>
+    </div>
+
+    <!-- Ubicación ahora debajo -->
+    <div class="footer-location">
+      <h3>Ubicación</h3>
+      <p>
+        Calle El Pilar 2 1A – Edificio Vitalicio. 38002, Santa Cruz de Tenerife.
+        España
+      </p>
     </div>
 
     <hr />
@@ -47,155 +55,158 @@ import Logo from "../img/logoFinal.png";
   </footer>
 
   <script>
-     document.addEventListener("DOMContentLoaded", () => {
-        const currentPath = window.location.pathname.replace(/^\/|\/$/g, "").toLowerCase();
-        const links = document.querySelectorAll(".footer-links a");
+    document.addEventListener("DOMContentLoaded", () => {
+      const currentPath = window.location.pathname
+        .replace(/^\/|\/$/g, "")
+        .toLowerCase();
+      const links = document.querySelectorAll(".footer-links a");
 
-        links.forEach(link => {
-        const href = link.getAttribute("href").replace(/^\/|\/$/g, "").toLowerCase();
+      links.forEach((link) => {
+        const href = link
+          .getAttribute("href")
+          .replace(/^\/|\/$/g, "")
+          .toLowerCase();
         if (currentPath === href || (currentPath === "" && href === "index")) {
-            link.classList.add("active");
+          link.classList.add("active");
         }
-        });
+      });
     });
   </script>
-</body>
 
-<style>
-  #footer {
-    background-color: #02511a;
-    color: white;
-    padding: 60px 20px 30px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
+  <style>
+    #footer {
+      background-color: #004d1a; /* Verde oscuro */
+      color: white;
+      padding: 3rem 2rem;
+      font-family: "Arial", sans-serif;
+    }
 
-  .footer-links a.active {
-    color: #f15a24;
-    font-weight: bold;
-  }
-
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
-  }
-
-  .footer-nav {
-    flex: 1 1 300px;
-  }
-
-  .footer-nav h3 {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 60px;
-    margin-bottom: 20px;
-  }
-
-  .footer-links ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .footer-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 0.95rem;
-    display: block;
-    margin-bottom: 10px;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover {
-    color: #f15a24;
-  }
-
-  .footer-social a {
-    color: white;
-    margin-right: 15px;
-    font-size: 1.2rem;
-    transition: color 0.2s;
-  }
-
-  .footer-social a:hover {
-    color: #f15a24;
-  }
-
-  .footer-newsletter {
-    flex: 1 1 300px;
-  }
-
-  .footer-newsletter h3 {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-  }
-
-  .footer-newsletter form {
-    display: flex;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    overflow: hidden;
-  }
-
-  .footer-newsletter input {
-    flex: 1;
-    padding: 12px;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    background: transparent;
-  }
-
-  .footer-newsletter button {
-    background-color: #004d40;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s;
-  }
-
-  .footer-newsletter button:hover {
-    background-color: #00332d;
-  }
-
-  hr {
-    margin: 40px 0 20px;
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .footer-copy {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #ddd;
-  }
-
-  @media (width < 768px) {
     .footer-container {
-      flex-direction: column;
-      align-items: flex-start;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-nav,
+    .footer-newsletter,
+    .footer-location {
+      flex: 1 1 300px;
+    }
+
+    .footer-nav h3,
+    .footer-newsletter h3,
+    .footer-location h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .footer-links {
-      flex-direction: column;
-      gap: 20px;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a.highlight {
+      color: #ffa500; /* Naranja */
+    }
+
+    .footer-social {
+      margin-top: 1rem;
+    }
+
+    .footer-social a {
+      color: white;
+      font-size: 1.2rem;
+      margin-right: 1rem;
     }
 
     .footer-newsletter form {
-      flex-direction: column;
+      display: flex;
+      border: 1px solid #ccc;
+      background-color: transparent;
+      max-width: 100%;
+    }
+
+    .footer-newsletter input {
+      flex: 1;
+      padding: 0.7rem;
+      border: none;
+      background: transparent;
+      color: white;
     }
 
     .footer-newsletter button {
-      width: 100%;
+      padding: 0.7rem 1rem;
+      background-color: #00664d;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
     }
-  }
-</style>
+
+    .footer-location {
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .footer-location h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-location p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    #footer hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 2rem 0 1rem;
+    }
+
+    .footer-copy {
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (width < 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .footer-newsletter form {
+        flex-direction: column;
+      }
+
+      .footer-newsletter button {
+        width: 100%;
+      }
+    }
+  </style>
+</body>
