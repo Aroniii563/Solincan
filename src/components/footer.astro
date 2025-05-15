@@ -31,8 +31,13 @@ import Logo from "../img/logoFinal.png";
       <!-- Suscripción -->
       <div class="footer-newsletter">
         <h3>Suscríbete a nuestro boletín</h3>
-        <form onsubmit="event.preventDefault()">
-          <input type="email" placeholder="Correo electrónico" required />
+        <form method="POST" action="">
+          <input
+            type="email"
+            name="email"
+            placeholder="Correo electrónico"
+            required
+          />
           <button type="submit">EMPEZAR</button>
         </form>
       </div>
