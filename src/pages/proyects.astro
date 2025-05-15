@@ -79,16 +79,16 @@ import Aios from "../img/Aios.png";
     <section class="contact-section">
       <div class="contact-box">
         <h2 class="contact-title">Hagámoslo posible</h2>
-        <div class="contact-form">
+        <form class="contact-form" method="POST" action="/api/formulario-casos">
           <div class="contact-info">
             <span>👤</span>
             <span>📞 +34 822 992 816</span>
           </div>
-          <input type="text" placeholder="Nombre *" required />
-          <input type="email" placeholder="Correo electrónico *" required />
-          <input type="tel" placeholder="Teléfono *" required />
+          <input type="text" name="nombre" placeholder="Nombre *" required />
+          <input type="email" name="correo" placeholder="Correo electrónico *" required />
+          <input type="number" name="telefono" placeholder="Teléfono *" required />
           <button type="submit">Registrarse</button>
-        </div>
+        </form>
       </div>
     </section>
   </main>
