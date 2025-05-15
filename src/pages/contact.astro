@@ -41,12 +41,12 @@ import Layout from "../layouts/Layout.astro";
           </p>
         </div>
 
-        <form class="contact-form">
-          <input type="text" placeholder="Nombre *" required />
-          <input type="text" placeholder="Apellidos *" required />
-          <input type="email" placeholder="Correo electrónico *" required />
-          <input type="tel" placeholder="Teléfono *" required />
-          <textarea placeholder="Escriba aquí su duda"></textarea>
+        <form class="contact-form" method="POST" action="/api/consultas">
+          <input type="text" name="nombre" placeholder="Nombre *" required />
+          <input type="text" name="apellidos" placeholder="Apellidos *" required />
+          <input type="email" name="correo" placeholder="Correo electrónico *" required />
+          <input type="number" name="telefono" placeholder="Teléfono *" required />
+          <textarea name="mensaje" placeholder="Escriba aquí su duda"></textarea>
           <button type="submit">Enviar</button>
         </form>
       </div>

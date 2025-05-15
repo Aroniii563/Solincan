@@ -1,7 +1,3 @@
----
-import Logo from "../img/logoFinal.png";
----
-
 <body>
   <footer id="footer">
     <div class="footer-container">
@@ -31,13 +27,8 @@ import Logo from "../img/logoFinal.png";
       <!-- Suscripción -->
       <div class="footer-newsletter">
         <h3>Suscríbete a nuestro boletín</h3>
-        <form method="POST" action="">
-          <input
-            type="email"
-            name="email"
-            placeholder="Correo electrónico"
-            required
-          />
+        <form method="POST" action="/api/suscripciones">
+          <input type="email" name="email" placeholder="Correo electrónico" required />
           <button type="submit">EMPEZAR</button>
         </form>
       </div>
